@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+#bg {
+    background-color: rgba(147, 145, 145, 0.361);
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+#infoCard1, #infoCard2, #infoCard3 {
+    box-shadow:  0 8px 24px rgba(0, 0, 0, 0.08);
+} 
+
+@media (max-width : 600px) {
+    #container {
+        height: 100vh;
+        width: 100vw;
+        
+    }
+    #upper {
+        height: 30%;
+        width: 100%;
+    }
+
+    #lower {
+        height: 70%;
+        width: 100%;
+    }
+    #inner {
+        width: 80%;
+        height: 30%;
+        
+    }
+
+    #int {
+        height: 60px;
+    }
+
+    #btn {
+        height: 60px;
+        width: 80%;
+    }
+
+    #info {
+        
+        height: 40%;
+        flex-direction: column;
+        
+        padding-bottom: 10px;
+    }
+
+    #infoCard1 {
+        height: 50%;
+        width: 80%; 
+    }
+
+    #extra {
+        height: 50%;
+        width: 80%; 
+    }
+
+    #tasks {
+        
+        height: 50%;
+    }
+
+    #taskCard {
+        height: fit-content
+    }
+
+    #lowerSec {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #catt {
+        width: 100%;
+    }
+
+    #cntrls {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #header {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    #greetinTxt {
+        font-size: 20px;
+    }
+
+    #logoutBtn {
+        font-size: 15px;
+    }
+
+    #taskCreation {
+        height: 55%;
+    }
+
+    #upperSec {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #title, #assign, #date {
+        width: 100%;
+    }
+}
