@@ -66,81 +66,101 @@ const AdminDashboard = ({ handleLogout }) => {
                     <h2 className="text-lg font-semibold text-blue-800 mb-4">
                         Create Task for Employees
                     </h2>
+                    <form onSubmit={function(e){
+                    e.preventDefault()
+                    taskCreation()
+                }}>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                            <input
+                             required onChange={function(e){
+                                settitle(e.target.value)
+                             }} value={title}
+                                type="text"
+                                placeholder="Task Title"
+                                className="border rounded-md p-2 w-full"
+                            />
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-                        <input
-                            type="text"
-                            placeholder="Task Title"
-                            className="border rounded-md p-2 w-full"
+                            <select required onChange={function(e){
+                              setassignTo(e.target.value)
+                              }} value={assignTo}
+                             className="border rounded-md p-2 w-full">
+                                <option>Select Employee</option>
+                                <option>Kishore Kumar</option>
+                                <option>Amitabh Bachhan</option>
+                                <option>Dilip Kumar</option>
+                                <option>Sashi Kaapor</option>
+                                <option>Mohammed Raafi</option>
+                            </select>
+
+                            <input required onChange={function(e){
+                             setdueDate(e.target.value)
+                              }} value={dueDate}
+                                type="date"
+                                className="border rounded-md p-2 w-full"
+                            />
+                        </div>
+
+                        <textarea required  onChange={function(e){
+                            setdescri(e.target.value) }}
+                            value={descri}
+                            placeholder="Description"
+                            className="border rounded-md p-2 w-full mb-4"
+                            rows="4"
                         />
 
-                        <select className="border rounded-md p-2 w-full">
-                            <option>Select Employee</option>
-                            <option>John Doe</option>
-                            <option>Sarah Smith</option>
-                        </select>
+                        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                            <select required onChange={function(e){
+                              setcatt(e.target.value)
+                               }} value={catt} className="border rounded-md p-2 w-full md:w-1/3">
+                                <option>Select Category</option>
+                                <option>Design</option>
+                                <option>Development</option>
+                                <option>Testing</option>
+                            </select>
 
-                        <input
-                            type="date"
-                            className="border rounded-md p-2 w-full"
-                        />
-                    </div>
+                            <button className="bg-blue-600 hover:bg-blue-500 text-white px-6 py-2 rounded-md">
+                                Add Task
+                            </button>
+                        </div>
+                    </form>
 
-                    <textarea
-                        placeholder="Description"
-                        className="border rounded-md p-2 w-full mb-4"
-                        rows="4"
-                    />
-
-                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                        <select className="border rounded-md p-2 w-full md:w-1/3">
-                            <option>Select Category</option>
-                            <option>Design</option>
-                            <option>Development</option>
-                            <option>Testing</option>
-                        </select>
-
-                        <button className="bg-blue-600 hover:bg-blue-500 text-white px-6 py-2 rounded-md">
-                            Add Task
-                        </button>
-                    </div>
                 </div>
             </div>
 
             {/* OVERVIEW SECTION */}
             <div className='p-5'>
-            <div className="bg-white p-6 rounded-lg shadow overflow-x-auto">
-                <h2 className="text-lg font-semibold mb-4">
-                    Employee Task Overview
-                </h2>
+                <div className="bg-white p-6 rounded-lg shadow overflow-x-auto">
+                    <h2 className="text-lg font-semibold mb-4">
+                        Employee Task Overview
+                    </h2>
 
-                <table className="w-full border-collapse ">
-                    <thead>
-                        <tr className="bg-gray-100 text-left">
-                            <th className="p-3 border">Employee Name</th>
-                            <th className="p-3 border">Accepted Tasks</th>
-                            <th className="p-3 border">Completed Tasks</th>
-                            <th className="p-3 border">Failed Tasks</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {employeeTaskSummary.map((emp, index) => (
-                            <tr key={index} className="hover:bg-gray-50">
-                                <td className="p-3 border">{emp.Name}</td>
-                                <td className="p-3 border text-center font-semibold">
-                                    {emp.accepted}
-                                </td>
-                                <td className="p-3 border text-center font-semibold">
-                                    {emp.completed}
-                                </td>
-                                <td className="p-3 border text-center font-semibold">
-                                    {emp.failed}
-                                </td>
+                    <table className="w-full border-collapse ">
+                        <thead>
+                            <tr className="bg-gray-100 text-left">
+                                <th className="p-3 border">Employee Name</th>
+                                <th className="p-3 border">Accepted Tasks</th>
+                                <th className="p-3 border">Completed Tasks</th>
+                                <th className="p-3 border">Failed Tasks</th>
                             </tr>
-                        ))}
-                    </tbody>
-                </table>
-            </div>
+                        </thead>
+                        <tbody>
+                            {employeeTaskSummary.map((emp, index) => (
+                                <tr key={index} className="hover:bg-gray-50">
+                                    <td className="p-3 border">{emp.Name}</td>
+                                    <td className="p-3 border text-center font-semibold">
+                                        {emp.accepted}
+                                    </td>
+                                    <td className="p-3 border text-center font-semibold">
+                                        {emp.completed}
+                                    </td>
+                                    <td className="p-3 border text-center font-semibold">
+                                        {emp.failed}
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     )
