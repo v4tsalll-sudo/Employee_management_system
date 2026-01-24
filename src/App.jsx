@@ -9,6 +9,11 @@ const App = () => {
   const bhejaHuaData = useContext(authContxt)
   console.log(bhejaHuaData);
 
+  useEffect(() => {
+    setLocalStorage()
+  }, [])
+  
+
   const [user, setUser] = useState(() => {
     const saveUser = JSON.parse(localStorage.getItem('LoggedInUser') )
     if(saveUser?.role == 'admin') {
