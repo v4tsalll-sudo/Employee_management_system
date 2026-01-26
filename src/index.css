@@ -15,10 +15,10 @@
 
 @media (max-width : 600px) {
     #bg {
-        height: 90vh;
+        height: 95vh;
     }
     #container {
-        height: 90vh;
+        height: 95vh;
         width: 100vw;
         
     }
