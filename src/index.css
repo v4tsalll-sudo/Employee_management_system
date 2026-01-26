@@ -14,8 +14,11 @@
 } 
 
 @media (max-width : 600px) {
+    #bg {
+        height: 90vh;
+    }
     #container {
-        height: 100vh;
+        height: 90vh;
         width: 100vw;
         
     }
