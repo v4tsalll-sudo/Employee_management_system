@@ -147,7 +147,7 @@ const AdminDashboard = ({ handleLogout }) => {
                             {employeeTaskSummary.map((emp, index) => (
                                 <tr key={index} className="hover:bg-gray-50">
                                     <td className="p-3 border">{emp.Name}</td>
-                                    <td className="p-3 border text-center font-semibold">
+                                    <td className="p-3 md:p-1.5 border text-center font-semibold">
                                         {emp.accepted}
                                     </td>
                                     <td className="p-3 border text-center font-semibold">
