@@ -115,4 +115,12 @@
     #title, #assign, #date {
         width: 100%;
     }
+
+    td {
+        padding: 0px;
+    }
+
+    th {
+        padding: 0px;
+    }
 }

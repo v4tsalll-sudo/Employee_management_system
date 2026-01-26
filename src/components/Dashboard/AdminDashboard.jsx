@@ -138,16 +138,16 @@ const AdminDashboard = ({ handleLogout }) => {
                         <thead>
                             <tr className="bg-gray-100 text-left">
                                 <th className="p-3 border">Employee Name</th>
-                                <th className="p-3 border">Accepted Tasks</th>
-                                <th className="p-3 border">Completed Tasks</th>
-                                <th className="p-3 border">Failed Tasks</th>
+                                <th className="p-3 border">Accepted </th>
+                                <th className="p-3 border">Completed </th>
+                                <th className="p-3 border">Failed </th>
                             </tr>
                         </thead>
                         <tbody>
                             {employeeTaskSummary.map((emp, index) => (
                                 <tr key={index} className="hover:bg-gray-50">
                                     <td className="p-3 border">{emp.Name}</td>
-                                    <td className="p-3 md:p-1.5 border text-center font-semibold">
+                                    <td className="p-3  border text-center font-semibold">
                                         {emp.accepted}
                                     </td>
                                     <td className="p-3 border text-center font-semibold">
