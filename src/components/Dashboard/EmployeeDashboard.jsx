@@ -5,6 +5,7 @@ import { CheckSquareIcon } from 'lucide-react'
 import { CircleX } from 'lucide-react'
 
 
+
 const EmployeeDashboard = ({handleLogout, data}) => {
 
     
@@ -59,9 +60,9 @@ const EmployeeDashboard = ({handleLogout, data}) => {
     <div className=' h-screen w-screen text-white  px-5'>
         {/* HEADER */}
         <header className='text-black flex justify-between w-full h-[10%]  items-center '>
-            <p className='font-semibold text-lg'>Hi, {data.fullname}👋</p>
+            <p id='greetinTxt2' className='font-semibold text-lg'>Hi, {data.fullname}👋</p>
             <button onClick={handleLogout}
-            className='bg-[#ffffff] text-red-500 text-sm h-fit pb-1.5 px-4 pt-1 rounded-[2.5px] border border-gray-200'>Logout <LogOut size={20} className='inline ml-1' /> </button>
+            className='bg-[#ffffff] text-red-500 text-sm h-fit pb-1.5 px-4 pt-1 rounded-[2.5px] border border-gray-200'>Logout <LogOut id='logoutIcon' size={20} className='inline ml-1' /> </button>
         </header>
 
         {/* INFORMATION */}
@@ -91,26 +92,29 @@ const EmployeeDashboard = ({handleLogout, data}) => {
             <div className='h-[93%]  flex flex-col gap-5 items-center overflow-x-scroll py-5'>
                 {tasks.map(function(e, idx){
                     
-                    return <div key={e.id} id='taskCard' className='w-[95%] h-[35%] bg-white shrink-0 rounded-[10px] px-5 py-2.5 border border-gray-200'>
+                    return <div key={e.id} id='taskCard' className='w-[95%] h-fit bg-white shrink-0 rounded-[10px] px-5 py-2.5 border border-gray-200'>
                     <div className='flex justify-between'>
-                        <p className='text-[20px]'>{e.title} <span className='text-[13px] text-[#0606067d] ml-1'>{e.date}</span></p>
+                        <p id='Title' className='text-[20px]'>{e.title} <span id='date1' className='text-[13px] text-[#0606067d] ml-1'>{e.date}</span></p>
                         {e.stat === 'pending' && (
-                            <button onClick={() => updateTaskStatus(e.id, "Accepted")} className='text-sm bg-[#46ef46] pb-1 px-4 rounded-[5px] self-center'>Accept Task</button>
+                            <button id='acceptBtn' onClick={() => updateTaskStatus(e.id, "Accepted")} className='text-sm bg-[#46ef46] pb-1 px-4 rounded-[5px] self-center'>Accept </button>
                         )}
                         {e.stat === 'Accepted' && (<p className='text-green-500'>Active</p>)}
                         {e.stat === 'Completed' && (<p className='text-blue-500'>Completed</p>)}
                         {e.stat === 'Failed' && (<p className='text-red-500'>Failed</p>)}
                     </div>
-                    <p className='text-[#000000ba] w-[70%]'>{e.description}</p>
-                    <div id='lowerSec' className='mt-3 flex justify-between'>
+                    <p id='descri' className='text-[#000000ba] w-full'>{e.description}</p>
+                    <div id='lowerSec' className='mt-3 flex justify-between  h-fit items-center'>
+                        <div id='date_and_catt' className='flex gap-2'>
                         <p id='catt' className=''>{e.category}</p>
-                        <div id='cntrls' className='flex gap-3 w-fit self-center'>
-                          {e.stat === 'Accepted'&& (
-                            <button id='btns' onClick={() => updateTaskStatus(e.id, "Completed")} className='text-sm bg-[#1881f8] pb-1.5 pt-1 px-4 rounded-[5px] self-center text-white'>Mark Complete</button>
+                        <p id='date2' className='text-[13px] bg-[gainsboro] px-2 rounded-[5px] hidden'>{e.date}</p>
+                        </div>
+                        <div id='cntrls' className='flex  gap-3 self-center'>
+                          {e.stat === 'pending'&& (
+                            <button id='btns' onClick={() => updateTaskStatus(e.id, "Completed")} className='text-sm bg-[#1881f8] pb-1.5 pt-1 px-4 rounded-[5px] self-center text-white'> Completed</button>
                             
                           )}
-                          {e.stat === 'Accepted' && (
-                            <button id='btns' onClick={() => updateTaskStatus(e.id, "Failed")} className='text-sm bg-[red] pb-1.5 pt-1 px-4 rounded-[5px] self-center text-white'>Mark Failed</button>
+                          {e.stat === 'pending' && (
+                            <button id='btns' onClick={() => updateTaskStatus(e.id, "Failed")} className='text-sm bg-[red] pb-1.5 pt-1 px-4 rounded-[5px] self-center text-white'> Failed</button>
                           )}
                         </div>
                     </div>

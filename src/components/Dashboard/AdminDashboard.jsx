@@ -57,7 +57,7 @@ const AdminDashboard = ({ handleLogout }) => {
             {/* HEADER */}
             <header id='header' className='bg-linear-to-r from-cyan-500 to-blue-500 w-full py-2 flex flex-row justify-between items-center px-15'>
                 <p id='greetinTxt' className='font-semibold text-[25px] text-white'>Hello, Admin!</p>
-                <button id='logoutBtn' onClick={handleLogout} className='bg-[#2e86c1] px-4 pb-1.5 pt-0.5 rounded-[5px] text-white'>Logout <LogOut size={20} className='inline ml-1' /> </button>
+                <button id='logoutBtn' onClick={handleLogout} className='bg-[#2e86c1] px-4 pb-1.5 pt-0.5 rounded-[5px] text-white'>Logout <LogOut id='logoutIcon' size={20} className='inline ml-1' /> </button>
             </header>
 
             {/* TASK CREATION */}
@@ -136,11 +136,11 @@ const AdminDashboard = ({ handleLogout }) => {
 
                     <table className="w-full border-collapse ">
                         <thead>
-                            <tr className="bg-gray-100 text-left">
+                            <tr className="bg-gray-100 text-center">
                                 <th className="p-3 border">Employee Name</th>
-                                <th className="p-3 border">Accepted </th>
-                                <th className="p-3 border">Completed </th>
-                                <th className="p-3 border">Failed </th>
+                                <th className="p-3 border">Accepted tasks </th>
+                                <th className="p-3 border">Completed tasks</th>
+                                <th className="p-3 border">Failed tasks</th>
                             </tr>
                         </thead>
                         <tbody>

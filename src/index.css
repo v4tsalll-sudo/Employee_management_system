@@ -13,6 +13,8 @@
     box-shadow:  0 8px 24px rgba(0, 0, 0, 0.08);
 } 
 
+
+
 @media (max-width : 600px) {
     #bg {
         height: 93vh;
@@ -51,17 +53,17 @@
         height: 40%;
         flex-direction: column;
         
-        padding-bottom: 10px;
+        margin-bottom: 20px;
     }
 
     #infoCard1 {
         height: 50%;
-        width: 80%; 
+        width: 100%; 
     }
 
     #extra {
         height: 50%;
-        width: 80%; 
+        width: 100%; 
     }
 
     #tasks {
@@ -74,20 +76,41 @@
     }
 
     #lowerSec {
-        margin-top: 20px;
+        margin-top: 5px;
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 0px;
     }
 
-    #catt {
+    #descri {
+        margin-top: 2px;
+    }
+
+    #date1 {
+        display: none;
+    }
+
+    #date2{
+        display: block;
+    }
+
+    #date_and_catt {
         width: 100%;
+    }
+
+    #Title {
+        font-size: 15px;
+    }
+
+    #catt, #descri, #date2 {
+        font-size: 13px;
     }
 
     #cntrls {
         width: 100%;
         display: flex;
         justify-content: space-between;
+        margin-top: 20px;
     }
 
     #header {
@@ -99,7 +122,11 @@
         font-size: 20px;
     }
 
-    #logoutBtn {
+    #greetinTxt2 {
+        font-size: 15px;
+    }
+
+    #logoutBtn, #logoutIcon {
         font-size: 15px;
     }
 
@@ -116,11 +143,14 @@
         width: 100%;
     }
 
-    td {
-        padding: 0px;
+    #acceptBtn {
+        padding: 0 10px;
+        padding-bottom: 2px;
+        font-size: 13px;
     }
 
-    th {
-        padding: 0px;
+    #btns {
+        font-size: 13px;
+        padding: 3px 15px;
     }
 }
