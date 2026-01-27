@@ -6,13 +6,6 @@ const employees = [
       email: "employee1@example.com",
       password: "123",
       tasks: [
-        { 
-          title: "Design homepage",
-          description: "Create new homepage layout jdj fjfrr jgfgtfg kvfnvif",
-          date: "2025-01-04",
-          category: "development",
-          stat : "pending"
-        }
       ]
     },
     {

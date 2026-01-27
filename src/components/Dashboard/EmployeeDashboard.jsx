@@ -109,11 +109,11 @@ const EmployeeDashboard = ({handleLogout, data}) => {
                         <p id='date2' className='text-[13px] bg-[gainsboro] px-2 rounded-[5px] hidden'>{e.date}</p>
                         </div>
                         <div id='cntrls' className='flex  gap-3 self-center'>
-                          {e.stat === 'pending'&& (
+                          {e.stat === 'Accepted'&& (
                             <button id='btns' onClick={() => updateTaskStatus(e.id, "Completed")} className='text-sm bg-[#1881f8] pb-1.5 pt-1 px-4 rounded-[5px] self-center text-white'> Completed</button>
                             
                           )}
-                          {e.stat === 'pending' && (
+                          {e.stat === 'Accepted' && (
                             <button id='btns' onClick={() => updateTaskStatus(e.id, "Failed")} className='text-sm bg-[red] pb-1.5 pt-1 px-4 rounded-[5px] self-center text-white'> Failed</button>
                           )}
                         </div>
