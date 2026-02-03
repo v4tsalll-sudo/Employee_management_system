@@ -26,31 +26,9 @@ const employees = [
           description: "Create new homepage layout",
           date: "2025-01-04",
           category: "Design",
-          active: true,
-          isNew: true,
-          completed: false,
-          failed: false
+          stat : 'pending'
         },
-        {
-          title: "Fix navbar bug",
-          description: "Resolve navbar alignment issue",
-          date: "2025-01-01",
-          category: "Development",
-          active: false,
-          isNew: false,
-          completed: true,
-          failed: false
-        },
-        {
-          title: "Image optimization",
-          description: "Compress website images",
-          date: "2025-01-03",
-          category: "Performance",
-          active: false,
-          isNew: false,
-          completed: false,
-          failed: true
-        }
+        
       ]
     },
     {
@@ -64,31 +42,9 @@ const employees = [
           description: "Draft blog on new features",
           date: "2025-01-06",
           category: "Content",
-          active: true,
-          isNew: true,
-          completed: false,
-          failed: false
+          stat : 'pending'
         },
-        {
-          title: "SEO audit",
-          description: "Check SEO performance",
-          date: "2025-01-02",
-          category: "Marketing",
-          active: false,
-          isNew: false,
-          completed: true,
-          failed: false
-        },
-        {
-          title: "Keyword research",
-          description: "Find keywords for next campaign",
-          date: "2025-01-01",
-          category: "Marketing",
-          active: false,
-          isNew: false,
-          completed: false,
-          failed: true
-        }
+        
       ]
     },
     {
@@ -102,31 +58,9 @@ const employees = [
           description: "Check server health",
           date: "2025-01-05",
           category: "IT",
-          active: true,
-          isNew: true,
-          completed: false,
-          failed: false
+          stat : 'pending'
         },
-        {
-          title: "Backup database",
-          description: "Create weekly backup",
-          date: "2025-01-03",
-          category: "IT",
-          active: false,
-          isNew: false,
-          completed: true,
-          failed: false
-        },
-        {
-          title: "Security patch",
-          description: "Apply security updates",
-          date: "2025-01-01",
-          category: "Security",
-          active: false,
-          isNew: false,
-          completed: false,
-          failed: true
-        }
+        
       ]
     },
     {
@@ -140,31 +74,9 @@ const employees = [
           description: "Conduct weekly team meeting",
           date: "2025-01-06",
           category: "Management",
-          active: true,
-          isNew: true,
-          completed: false,
-          failed: false
+          stat : 'pending'
         },
-        {
-          title: "Performance review",
-          description: "Review team performance",
-          date: "2025-01-04",
-          category: "HR",
-          active: false,
-          isNew: false,
-          completed: true,
-          failed: false
-        },
-        {
-          title: "Hiring plan",
-          description: "Prepare hiring roadmap",
-          date: "2025-01-02",
-          category: "HR",
-          active: false,
-          isNew: false,
-          completed: false,
-          failed: true
-        }
+
       ]
     }
   ];
