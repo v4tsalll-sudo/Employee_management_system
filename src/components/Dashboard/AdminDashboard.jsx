@@ -70,7 +70,7 @@ const AdminDashboard = ({ handleLogout }) => {
             {/* HEADER */}
             <header id='header' className=' w-full py-2 pt-3 flex flex-row justify-between items-center px-15'>
                 <p id='greetinTxt' className='font-semibold text-[25px] text-[#e5e7eb]'>Hello, Admin!</p>
-                <button id='logoutBtn' onClick={handleLogout} className='bg-[#6366f1] text-sm px-4 pb-1.5 pt-0.5 rounded-[5px] text-[#e5e7eb] '>Logout <LogOut id='logoutIcon' size={15} className='inline ml-1' /> </button>
+                <button id='logoutBtn' onClick={handleLogout} className='bg-[#6366f1] text-sm px-4 pb-1 pt-0.5 rounded-[5px] text-[#e5e7eb] '>Logout <LogOut id='logoutIcon' size={15} className='inline ml-1' /> </button>
             </header>
 
             {/* TASK CREATION */}
