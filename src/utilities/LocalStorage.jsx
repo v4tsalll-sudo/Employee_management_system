@@ -6,6 +6,13 @@ const employees = [
       email: "employee1@example.com",
       password: "123",
       tasks: [
+        {
+          title: "SEO audit",
+          description: "Check SEO performance",
+          date: "2025-01-02",
+          category: "Marketing",
+          stat : 'pending'
+        }  
       ]
     },
     {

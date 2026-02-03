@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { authContxt } from '../../context/AuthContext'
 import { LogOut } from 'lucide-react'
 const AdminDashboard = ({ handleLogout }) => {
@@ -20,8 +20,17 @@ const AdminDashboard = ({ handleLogout }) => {
         }
     })
 
-    console.log(employeeTaskSummary)
+    // console.log(employeeTaskSummary)
 
+
+    const [newEmployees, setNewEmployees] = useState([])
+
+    useEffect(() => {
+        if(newEmployees.length > 0) {
+          localStorage.setItem("employees", JSON.stringify(newEmployees))
+         
+        }
+      }, [newEmployees])
     const taskCreation = () => {
         const newTask = {
             id: Date.now(),
@@ -38,8 +47,7 @@ const AdminDashboard = ({ handleLogout }) => {
                 return { ...e, tasks: [...e.tasks, newTask] }
             } return e;
         })
-
-        localStorage.setItem("employees", JSON.stringify(updatedEmployees))
+        setNewEmployees(updatedEmployees)
         settitle('')
         setassignTo('')
         setcatt('')
@@ -53,17 +61,17 @@ const AdminDashboard = ({ handleLogout }) => {
     const [catt, setcatt] = useState('')
 
     return (
-        <div className='bg-[#f4f6f9] h-fit w-screen'>
+        <div className='bg-[#0f172a] h-fit w-screen'>
             {/* HEADER */}
-            <header id='header' className='bg-linear-to-r from-cyan-500 to-blue-500 w-full py-2 flex flex-row justify-between items-center px-15'>
-                <p id='greetinTxt' className='font-semibold text-[25px] text-white'>Hello, Admin!</p>
-                <button id='logoutBtn' onClick={handleLogout} className='bg-[#2e86c1] px-4 pb-1.5 pt-0.5 rounded-[5px] text-white'>Logout <LogOut id='logoutIcon' size={20} className='inline ml-1' /> </button>
+            <header id='header' className=' w-full py-2 pt-3 flex flex-row justify-between items-center px-15'>
+                <p id='greetinTxt' className='font-semibold text-[25px] text-[#e5e7eb]'>Hello, Admin!</p>
+                <button id='logoutBtn' onClick={handleLogout} className='bg-[#6366f1] text-sm px-4 pb-1.5 pt-0.5 rounded-[5px] text-[#e5e7eb] '>Logout <LogOut id='logoutIcon' size={15} className='inline ml-1' /> </button>
             </header>
 
             {/* TASK CREATION */}
-            <div className='p-5'>
-                <div className="bg-blue-50 p-6 rounded-lg shadow">
-                    <h2 className="text-lg font-semibold text-blue-800 mb-4">
+            <div className='px-5 py-2'>
+                <div className="bg-[#1e293b] border border-[#ffffff14] p-6 rounded-lg">
+                    <h2 className="text-lg font-semibold text-[#e5e7eb] mb-4">
                         Create Task for Employees
                     </h2>
                     <form onSubmit={function(e){
@@ -77,13 +85,13 @@ const AdminDashboard = ({ handleLogout }) => {
                              }} value={title}
                                 type="text"
                                 placeholder="Task Title"
-                                className="border rounded-md p-2 w-full"
+                                className="bg-[#0f172a] text-[#94a3b8] active:outline-2 outline-[#6366f1] rounded-md p-2 w-full"
                             />
 
                             <select required onChange={function(e){
                               setassignTo(e.target.value)
                               }} value={assignTo}
-                             className="border rounded-md p-2 w-full">
+                             className=" rounded-md p-2 w-full bg-[#0f172a] text-[#94a3b8] active:outline-2 outline-[#6366f1]">
                                 <option>Select Employee</option>
                                 <option>Kishore Kumar</option>
                                 <option>Amitabh Bachhan</option>
@@ -96,7 +104,7 @@ const AdminDashboard = ({ handleLogout }) => {
                              setdueDate(e.target.value)
                               }} value={dueDate}
                                 type="date"
-                                className="border rounded-md p-2 w-full"
+                                className=" rounded-md p-2 w-full bg-[#0f172a] text-[#94a3b8] active:outline-2 outline-[#6366f1]"
                             />
                         </div>
 
@@ -104,21 +112,21 @@ const AdminDashboard = ({ handleLogout }) => {
                             setdescri(e.target.value) }}
                             value={descri}
                             placeholder="Description"
-                            className="border rounded-md p-2 w-full mb-4"
+                            className=" rounded-md p-2 w-full   mb-4 bg-[#0f172a] text-[#94a3b8] active:outline-2 outline-[#6366f1]"
                             rows="4"
                         />
 
                         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                             <select required onChange={function(e){
                               setcatt(e.target.value)
-                               }} value={catt} className="border rounded-md p-2 w-full md:w-1/3">
+                               }} value={catt} className=" rounded-md p-2 w-full md:w-1/3 bg-[#0f172a] text-[#94a3b8] active:outline-2 outline-[#6366f1]">
                                 <option>Select Category</option>
                                 <option>Design</option>
                                 <option>Development</option>
                                 <option>Testing</option>
                             </select>
 
-                            <button className="bg-blue-600 hover:bg-blue-500 text-white px-6 py-2 rounded-md">
+                            <button className="bg-[#6366f1] hover:bg-[#6365f1c5] text-[#e5e7eb] px-6 py-2 rounded-md">
                                 Add Task
                             </button>
                         </div>
@@ -129,31 +137,31 @@ const AdminDashboard = ({ handleLogout }) => {
 
             {/* OVERVIEW SECTION */}
             <div className='p-5'>
-                <div className="bg-white p-6 rounded-lg shadow overflow-x-auto">
-                    <h2 className="text-lg font-semibold mb-4">
+                <div className="bg-[#1e293b] border border-[#ffffff14] p-6 rounded-lg  overflow-x-auto">
+                    <h2 className="text-lg font-semibold text-[#e5e7eb] mb-4">
                         Employee Task Overview
                     </h2>
 
                     <table className="w-full border-collapse ">
                         <thead>
-                            <tr className="bg-gray-100 text-center">
-                                <th className="p-3 border">Employee Name</th>
-                                <th className="p-3 border">Accepted tasks </th>
-                                <th className="p-3 border">Completed tasks</th>
-                                <th className="p-3 border">Failed tasks</th>
+                            <tr className="bg-[#0f172a]  text-center">
+                                <th className="p-3 border border-[#94a3b8] text-[#e5e7eb]">Employee Name</th>
+                                <th className="p-3 border border-[#94a3b8] text-[#e5e7eb]">Accepted tasks </th>
+                                <th className="p-3 border border-[#94a3b8] text-[#e5e7eb]">Completed tasks</th>
+                                <th className="p-3 border border-[#94a3b8] text-[#e5e7eb]">Failed tasks</th>
                             </tr>
                         </thead>
                         <tbody>
                             {employeeTaskSummary.map((emp, index) => (
-                                <tr key={index} className="hover:bg-gray-50">
-                                    <td className="p-3 border">{emp.Name}</td>
-                                    <td className="p-3  border text-center font-semibold">
+                                <tr key={index} className="hover:bg-[#1e293b]">
+                                    <td className="p-3 border border-[#94a3b8] text-[#e5e7eb]">{emp.Name}</td>
+                                    <td className="p-3  border border-[#94a3b8] text-[#e5e7eb] text-center font-semibold">
                                         {emp.accepted}
                                     </td>
-                                    <td className="p-3 border text-center font-semibold">
+                                    <td className="p-3 border border-[#94a3b8] text-[#e5e7eb] text-center font-semibold">
                                         {emp.completed}
                                     </td>
-                                    <td className="p-3 border text-center font-semibold">
+                                    <td className="p-3 border border-[#94a3b8] text-[#e5e7eb] text-center font-semibold">
                                         {emp.failed}
                                     </td>
                                 </tr>
