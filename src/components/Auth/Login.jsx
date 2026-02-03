@@ -13,7 +13,7 @@ const Login = ({handleLogin}) => {
   }
 
   return (
-    <div id=''  className='h-screen w-screen bg-[#0f172a] flex items-center justify-center '>
+    <div id='bg1'  className='h-screen w-screen bg-[#0f172a] flex items-center justify-center '>
       <div id='container' className='  h-[400px] w-[540px] flex flex-col '>
         
           <div id='upper' className=' h-[40%]  w-full flex flex-col justify-center items-center'>

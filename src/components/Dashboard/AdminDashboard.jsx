@@ -5,7 +5,9 @@ const AdminDashboard = ({ handleLogout }) => {
 
     const Data = useContext(authContxt)
 
-    const employees = JSON.parse(localStorage.getItem('employees'))
+    const [employees, setEmployees] = useState(
+        JSON.parse(localStorage.getItem('employees')) || []
+    )
 
     const employeeTaskSummary = employees.map(emp => {
         const accepted = emp.tasks.filter(t => t.stat === 'Accepted').length
@@ -23,14 +25,14 @@ const AdminDashboard = ({ handleLogout }) => {
     // console.log(employeeTaskSummary)
 
 
-    const [newEmployees, setNewEmployees] = useState([])
+    // const [newEmployees, setNewEmployees] = useState([])
 
-    useEffect(() => {
-        if(newEmployees.length > 0) {
-          localStorage.setItem("employees", JSON.stringify(newEmployees))
+    //  useEffect(() => {
+    //    if(newEmployees.length > 0) {
+    //       localStorage.setItem("employees", JSON.stringify(newEmployees))
          
-        }
-      }, [newEmployees])
+    //     }
+    //    }, [newEmployees])
     const taskCreation = () => {
         const newTask = {
             id: Date.now(),
@@ -47,7 +49,10 @@ const AdminDashboard = ({ handleLogout }) => {
                 return { ...e, tasks: [...e.tasks, newTask] }
             } return e;
         })
-        setNewEmployees(updatedEmployees)
+
+        localStorage.setItem("employees", JSON.stringify(updatedEmployees))
+        setEmployees(updatedEmployees)
+        
         settitle('')
         setassignTo('')
         setcatt('')
