@@ -10,7 +10,9 @@ const App = () => {
   console.log(bhejaHuaData);
 
   useEffect(() => {
-    setLocalStorage()
+    if(!localStorage.getItem("employees")) {
+      setLocalStorage()
+    }
   }, [])
   
 

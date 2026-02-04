@@ -62,7 +62,7 @@ const EmployeeDashboard = ({handleLogout, data}) => {
         <header className='text-black flex justify-between w-full h-[10%] sm:px-5 items-center '>
             <p id='greetinTxt2' className='font-semibold text-lg text-[#e5e7eb]'>Hi, {data.fullname}👋</p>
             <button onClick={handleLogout}
-            className='bg-[#6366f1] text-[#e5e7eb] text-sm h-fit pb-1 px-4 pt-0.5 rounded-[2.5px]'>Logout <LogOut id='logoutIcon' size={20} className='inline ml-1' /> </button>
+            className='bg-[#6366f1] text-[#e5e7eb] text-[13px] pb-1 pt-0.5 px-4 rounded-[2.5px] sm:text-[15px] '>Logout <LogOut id='logoutIcon' size={15} className='inline ml-1' /> </button>
         </header>
 
         {/* INFORMATION */}
