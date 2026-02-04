@@ -6,13 +6,7 @@ const employees = [
       email: "employee1@example.com",
       password: "123",
       tasks: [
-        {
-          title: "SEO audit",
-          description: "Check SEO performance",
-          date: "2025-01-02",
-          category: "Marketing",
-          stat : 'pending'
-        }  
+        
       ]
     },
     {
@@ -21,13 +15,7 @@ const employees = [
       email: "employee2@example.com",
       password: "123",
       tasks: [
-        {
-          title: "Design homepage",
-          description: "Create new homepage layout",
-          date: "2025-01-04",
-          category: "Design",
-          stat : 'pending'
-        },
+       
         
       ]
     },
@@ -37,13 +25,7 @@ const employees = [
       email: "employee3@example.com",
       password: "123",
       tasks: [
-        {
-          title: "Write blog post",
-          description: "Draft blog on new features",
-          date: "2025-01-06",
-          category: "Content",
-          stat : 'pending'
-        },
+        
         
       ]
     },
@@ -53,13 +35,6 @@ const employees = [
       email: "employee4@example.com",
       password: "123",
       tasks: [
-        {
-          title: "Server monitoring",
-          description: "Check server health",
-          date: "2025-01-05",
-          category: "IT",
-          stat : 'pending'
-        },
         
       ]
     },
@@ -69,13 +44,7 @@ const employees = [
       email: "employee5@example.com",
       password: "123",
       tasks: [
-        {
-          title: "Team meeting",
-          description: "Conduct weekly team meeting",
-          date: "2025-01-06",
-          category: "Management",
-          stat : 'pending'
-        },
+        
 
       ]
     }
